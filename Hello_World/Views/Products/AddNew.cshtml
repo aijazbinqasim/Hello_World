@@ -1,0 +1,55 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Hello_World.Models.Product
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        span, #error-summary {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h4>Add New Product</h4>
+        <hr />
+
+        <form asp-controller="Products" asp-action="Save" method="post">
+            <pre>
+            <div id="error-summary" asp-validation-summary="All"></div>
+
+            <label asp-for="Id"></label>
+            <input asp-for="Id" />
+            <span asp-validation-for="Id"></span>
+
+            <label asp-for="Title"></label>
+            <input asp-for="Title" placeholder="Add Title" />
+            <span asp-validation-for="Title"></span>
+
+            <label asp-for="Email"></label>
+            <input asp-for="Email" placeholder="Add Email" />
+            <span asp-validation-for="Email"></span>
+
+            <label asp-for="Website"></label>
+            <input asp-for="Website" placeholder="Add Website" />
+            <span asp-validation-for="Website"></span>
+
+            <label asp-for="Price"></label>
+            <input min="0" max="500" asp-for="Price" />
+            <span asp-validation-for="Price"></span>
+
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" rows="4" cols="20"></textarea>
+            <span asp-validation-for="Description"></span>
+
+            <button type="submit">Save</button>
+            </pre>
+        </form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿@*@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+    <div>
+        <h4>Contact</h4>
+        <hr />
+
+        <form action="/Home/ContactUs" method="post">
+            <pre>
+
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" value="" />
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="" />
+
+            <button>Submit</button>
+
+           </pre>
+        </form>
+
+
+        @if (!string.IsNullOrEmpty(ViewBag.Name) && !string.IsNullOrEmpty(ViewBag.Email))
+        {
+            <pre>
+                      Name: @ViewBag.Name
+                      Email: @ViewBag.Email
+                </pre>
+        }
+        else
+        {
+            <pre>
+                    Values are not set yet!
+                </pre>
+        }
+    </div>
+</body>
+</html>

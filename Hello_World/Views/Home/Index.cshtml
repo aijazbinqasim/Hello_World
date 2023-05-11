@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+
+    @{
+       var name = "Aziz";
+       var age = 18;
+
+        <p>Hello</p>
+    }
+
+    @if(name != "Aziz")
+    {
+        <p>I am @name</p>
+    } else
+    {
+        <text>I am not @name</text>
+    }
+
+    <p>Last week: @(DateTime.Now - TimeSpan.FromDays(7))</p>
+
+    <p>He is @(age >= 18? "Elder" : "He is child")</p>
+
+
+    <h1>His name is: @name</h1>
+
+    <h1>This is a Index page</h1>
+
+</body>
+</html>

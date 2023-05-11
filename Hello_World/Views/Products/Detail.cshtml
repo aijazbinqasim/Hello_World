@@ -1,0 +1,56 @@
+﻿@model Hello_World.Models.Product
+
+@*@{
+    var product = ViewData["Product"] as Product;
+}*@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*<title>@ViewData["Title"]</title>*@
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+    <div>
+        <h4>Product</h4>
+        <hr />
+
+        <table border="1" width="60%">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+
+                    <th>
+                        Title
+                    </th>
+
+                    <th>
+                        Price
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>
+                        @Model.Id
+                    </td>
+
+                    <td>
+                        @Model.Title
+                    </td>
+
+                    <td>
+                        @Model.Price
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
