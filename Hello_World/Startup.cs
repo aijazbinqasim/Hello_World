@@ -24,8 +24,9 @@ namespace Hello_World
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
             app.UseRouting();
-
+            
             //app.UseEndpoints(endpoints =>
             //{
             //    endpoints.MapDefaultControllerRoute();
@@ -35,7 +36,7 @@ namespace Hello_World
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Products}/{action=Products}/{id?}");
+                    pattern: "{controller=Products}/{action=AddNew}/{id?}");
             });
 
             //app.UseEndpoints(endpoints =>

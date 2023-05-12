@@ -7,7 +7,7 @@ namespace Hello_World.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Please provide Title")]
-        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Please provide Valid Title")]
+        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Please provide Valid Title")]
         public string Title { get; set; }
 
         [Required]
