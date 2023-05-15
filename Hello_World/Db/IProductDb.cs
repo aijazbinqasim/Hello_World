@@ -9,6 +9,6 @@ namespace Hello_World.Db
         IEnumerable<Product> GetProducts();
 
         // GetPeroduct(int id) is used to get/return only single product object.
-        Product GetDetail(int id);
+        Product GetDetail(int? id);
     }
 }

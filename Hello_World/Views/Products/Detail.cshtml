@@ -1,4 +1,5 @@
-﻿@model Hello_World.Models.Product
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Hello_World.Models.Product
 
 @*@{
     var product = ViewData["Product"] as Product;
@@ -18,7 +19,7 @@
         <h4>Product</h4>
         <hr />
 
-        <table border="1" width="60%">
+        <table border="1" width="85%">
             <thead>
                 <tr>
                     <th>
@@ -30,7 +31,19 @@
                     </th>
 
                     <th>
+                        Email
+                    </th>
+
+                    <th>
+                        Website
+                    </th>
+
+                    <th>
                         Price
+                    </th>
+
+                    <th>
+                        Description
                     </th>
                 </tr>
             </thead>
@@ -46,11 +59,27 @@
                     </td>
 
                     <td>
+                        @Model.Email
+                    </td>
+
+                    <td>
+                        @Model.Website
+                    </td>
+
+                    <td>
                         @Model.Price
+                    </td>
+
+                    <td>
+                        @Model.Description
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div>
+        <a asp-controller="Products" asp-action="Products">back to product list</a>
     </div>
 </body>
 </html>

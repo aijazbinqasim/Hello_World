@@ -4,18 +4,22 @@ namespace Hello_World.Models
 {
     public class Product
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
+        //[DataType(DataType.Password)]
         [Required(ErrorMessage = "Please provide Title")]
         [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Please provide Valid Title")]
         public string Title { get; set; }
 
         [Required]
         [EmailAddress]
+        [Display(Name = "Email Address")]
         public string Email { get; set; }
 
         [Required]
         [Url]
+        [Display(Name = "Web Url")]
+        
         public string Website { get; set; }
 
         [Required]

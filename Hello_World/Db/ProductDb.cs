@@ -12,15 +12,15 @@ namespace Hello_World.Db
         {
             _products = new List<Product>()
             {
-                new Product() { Id = 1, Title = "Laptop", Price = 50000 },
-                new Product() { Id = 2, Title = "Mobile", Price = 6000 },
-                new Product() { Id = 3, Title = "Mouse", Price = 3500 },
-                new Product() { Id = 4, Title = "Speaker", Price = 100 },
-                new Product() { Id = 5, Title = "Keyboard", Price = 1500 }
+                new Product() { Id = 1, Title = "Laptop", Email = "l@mail.com", Website="https://lbc.com", Price = 50000, Description="This is a best product" },
+                new Product() { Id = 2, Title = "Mobile",Email = "m@mail.com", Website="https://mbc.com", Price = 1200, Description="This is a best product" },
+                new Product() { Id = 3, Title = "Mouse", Email = "n@mail.com", Website="https://nbc.com", Price = 8500, Description="This is a best product" },
+                new Product() { Id = 4, Title = "Speaker", Email = "s@mail.com", Website="https://sbc.com", Price = 3600, Description="This is a best product" },
+                new Product() { Id = 5, Title = "Keyboard", Email = "k@mail.com", Website="https://kbc.com", Price = 44000, Description="This is a best product" }
             };
         }
 
-        public Product GetDetail(int id)
+        public Product GetDetail(int? id)
         {
             var product = _products.FirstOrDefault(p => p.Id == id);
             return product;

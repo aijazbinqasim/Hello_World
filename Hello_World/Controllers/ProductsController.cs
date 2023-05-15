@@ -14,7 +14,7 @@ namespace Hello_World.Controllers
            _productDb = productDb;
         }
 
-        public ViewResult Detail(int id) 
+        public ViewResult Detail(int? id) 
         {
             var product = _productDb.GetDetail(id);
             // ViewData["Product"] = product;

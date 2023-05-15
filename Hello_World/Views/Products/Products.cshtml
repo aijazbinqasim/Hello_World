@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Hello_World.Models.Product>
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<Hello_World.Models.Product>
 <!DOCTYPE html>
 
 <html>
@@ -23,9 +24,9 @@
                         Title
                     </th>
 
-                    <th>
+                   @* <th>
                         Price
-                    </th>
+                    </th>*@
                 </tr>
             </thead>
 
@@ -38,12 +39,12 @@
                         </td>
 
                         <td>
-                            @item.Title
+                            <a asp-controller="Products" asp-action="Detail" asp-route-id="@item.Id">@item.Title</a>
                         </td>
 
-                        <td>
+                       @* <td>
                             @item.Price
-                        </td>
+                        </td>*@
                     </tr>
                 }
             </tbody>
