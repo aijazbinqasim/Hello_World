@@ -5,19 +5,37 @@
 </head>
 <body>
 
-    @{
-       var name = "Aziz";
-       var age = 18;
 
-        <p>Hello</p>
+    <h2>@ViewBag.IsUserAccount</h2>
+
+    <h2>@ViewBag.Name</h2>
+
+    <h2>@ViewBag.Age</h2>
+
+    <ol>
+        @foreach (var hobby in ViewBag.Hobbies)
+        {
+            <li>@hobby</li>
+        }
+    </ol>
+
+
+    @*  <h2>@ViewBag.IsSync</h2>*@
+
+
+    @* @{
+    var name = "Aziz";
+    var age = 18;
+
+    <p>Hello</p>
     }
 
     @if(name != "Aziz")
     {
-        <p>I am @name</p>
+    <p>I am @name</p>
     } else
     {
-        <text>I am not @name</text>
+    <text>I am not @name</text>
     }
 
     <p>Last week: @(DateTime.Now - TimeSpan.FromDays(7))</p>
@@ -27,7 +45,7 @@
 
     <h1>His name is: @name</h1>
 
-    <h1>This is a Index page</h1>
+    <h1>This is a Index page</h1>*@
 
 </body>
 </html>
