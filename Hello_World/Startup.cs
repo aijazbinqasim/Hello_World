@@ -13,7 +13,7 @@ namespace Hello_World
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddScoped<IProductDb, ProductDb>();
+            services.AddSingleton<IProductDb, ProductDb>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

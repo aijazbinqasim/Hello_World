@@ -5,8 +5,19 @@
 </head>
 <body>
 
+    <h2>@(_config.GetValue<bool>("Person:IsUserAccount"))</h2>
+    <h2>@(_config.GetValue<string>("Person:Bio:Name"))</h2>
+    <h2>@(_config.GetValue<int>("Person:Bio:Age"))</h2>
 
-    <h2>@ViewBag.IsUserAccount</h2>
+    <ol>
+        @foreach (var hobby in _config.GetSection("Person:Bio:Hobbies").Get<List<string>>())
+        {
+            <li>@hobby</li>
+        }
+    </ol>
+
+
+    @*<h2>@ViewBag.IsUserAccount</h2>
 
     <h2>@ViewBag.Name</h2>
 
@@ -17,7 +28,7 @@
         {
             <li>@hobby</li>
         }
-    </ol>
+    </ol>*@
 
 
     @*  <h2>@ViewBag.IsSync</h2>*@
