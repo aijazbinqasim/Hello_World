@@ -23,6 +23,7 @@ namespace Hello_World.Models
         public string Website { get; set; }
 
         [Required]
+        [Display(Name = "Product Price$")]
         public int Price { get; set; }
 
         [MinLength(10)]
