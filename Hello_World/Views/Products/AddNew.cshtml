@@ -3,57 +3,69 @@
     ViewBag.Title = "Add New";
 }
 
-@*<!DOCTYPE html>
+<div>
+    <h4>Add New Product</h4>
+    <hr />
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    <style>
-        span, #error-summary {
-            color: red;
-        }
-    </style>
-</head>
-<body>*@
+    <form asp-controller="Products" asp-action="Save" method="post">
+    
+        <div id="error-summary" asp-validation-summary="All"></div>
 
-    <div>
-        <h4>Add New Product</h4>
-        <hr />
+        <label asp-for="Id"></label>
+        <input asp-for="Id" />
+        <span asp-validation-for="Id"></span>
 
-        <form asp-controller="Products" asp-action="Save" method="post">
-            <pre>
-            <div id="error-summary" asp-validation-summary="All"></div>
+        <div class="mb-3">
+          <label asp-for="Title" class="form-label"></label>
+          <input asp-for="Title" placeholder="Add Title" class="form-control" />
+          <span asp-validation-for="Title"></span>
+        </div>
 
-            <label asp-for="Id"></label>
-            <input asp-for="Id" />
-            <span asp-validation-for="Id"></span>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" placeholder="Add Email" />
+        <span asp-validation-for="Email"></span>
 
-            <label asp-for="Title"></label>
-            <input asp-for="Title" placeholder="Add Title" />
-            <span asp-validation-for="Title"></span>
+        <label asp-for="Website"></label>
+        <input asp-for="Website" placeholder="Add Website" />
+        <span asp-validation-for="Website"></span>
 
-            <label asp-for="Email"></label>
-            <input asp-for="Email" placeholder="Add Email" />
-            <span asp-validation-for="Email"></span>
+        <label asp-for="Price"></label>
+        <input min="0" max="500" asp-for="Price" />
+        <span asp-validation-for="Price"></span>
 
-            <label asp-for="Website"></label>
-            <input asp-for="Website" placeholder="Add Website" />
-            <span asp-validation-for="Website"></span>
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" rows="4" cols="20"></textarea>
+        <span asp-validation-for="Description"></span>
 
-            <label asp-for="Price"></label>
-            <input min="0" max="500" asp-for="Price" />
-            <span asp-validation-for="Price"></span>
+        <button type="submit">Save</button>
+            
+    </form>
+</div>
 
-            <label asp-for="Description"></label>
-            <textarea asp-for="Description" rows="4" cols="20"></textarea>
-            <span asp-validation-for="Description"></span>
+@{
+    @section Styles {
+        <style>
+            span, #error-summary {
+                color: red;
+            }
+        </style>
+    }
 
-            <button type="submit">Save</button>
-            </pre>
-        </form>
-    </div>
+    @section Scripts {
+        <script>
+          function submitConfirmation() {
+              var msg = confirm('Are you sure to save this product?');
 
-   @* <script src="~/js/jquery-3.7.0.min.js"></script>
-    <script src="~/js/jquery.validate.min.js"></script>
-    <script src="~/js/jquery.validate.unobtrusive.min.js"></script>*@
+              if(!msg) {
+                  return false;
+              }
+
+              return true;
+          }
+        </script>
+
+        <script src="~/js/jquery-3.7.0.min.js"></script>
+        <script src="~/js/jquery.validate.min.js"></script>
+        <script src="~/js/jquery.validate.unobtrusive.min.js"></script>
+    }
+}
