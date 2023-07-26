@@ -8,36 +8,51 @@
     <hr />
 
     <form asp-controller="Products" asp-action="Save" method="post">
-    
-        <div id="error-summary" asp-validation-summary="All"></div>
+         <div id="error-summary" asp-validation-summary="All"></div>
+       <div class="row">
+          <div class="col-md-12">
+            <div class="mb-3">
+             <label asp-for="Id" class="form-label"></label>
+             <input asp-for="Id" class="form-control" />
+             <span asp-validation-for="Id"></span>
+            </div>
 
-        <label asp-for="Id" class="form-label-"></label>
-        <input asp-for="Id" class="form-control" />
-        <span asp-validation-for="Id"></span><br />
+            <div class="mb-3">
+              <label asp-for="Title" class="form-label"></label>
+              <input asp-for="Title" placeholder="Add Title" class="form-control" />
+              <span asp-validation-for="Title"></span>
+            </div>
 
-        <label asp-for="Title" class="form-label-c"></label>
-        <input asp-for="Title" placeholder="Add Title" class="form-control" />
-        <span asp-validation-for="Title"></span><br />
-        
-        <label asp-for="Email" class="form-label-c"></label>
-        <input asp-for="Email" placeholder="Add Email" class="form-control" />
-        <span asp-validation-for="Email"></span><br />
+            <div class="mb-3">
+              <label asp-for="Email" class="form-label"></label>
+              <input asp-for="Email" placeholder="Add Email" class="form-control" />
+              <span asp-validation-for="Email"></span>
+            </div>
 
-        <label asp-for="Website" class="form-label-c"></label>
-        <input asp-for="Website" placeholder="Add Website" class="form-control" />
-        <span asp-validation-for="Website"></span><br />
+            <div class="mb-3">
+              <label asp-for="Website" class="form-label"></label>
+              <input asp-for="Website" placeholder="Add Website" class="form-control" />
+              <span asp-validation-for="Website"></span>
+            </div>
 
-        <label asp-for="Price" class="form-label-c"></label>
-        <input min="0" max="500" asp-for="Price" class="form-control" />
-        <span asp-validation-for="Price"></span><br />
+            <div class="mb-3">
+              <label asp-for="Price" class="form-label"></label>
+              <input min="0" max="500" asp-for="Price" class="form-control" />
+              <span asp-validation-for="Price"></span>
+            </div>
 
-        <label asp-for="Description" ></label>
-        <textarea asp-for="Description" rows="4" cols="20" class="form-control"></textarea>
-        <span asp-validation-for="Description"></span><br />
+            <div class="mb-3">
+              <label asp-for="Description" ></label>
+              <textarea asp-for="Description" rows="4" cols="20" class="form-control"></textarea>
+              <span asp-validation-for="Description"></span>
+            </div>
 
-        <button class="btn btn-outline-success me-2" type="submit">Save</button>
-           
-    </form>
+            <div class="mb-3 d-grid">
+              <button class="btn btn-outline-primary" type="submit">Save</button>
+            </div> 
+          </div>
+       </div>
+    </form> 
 </div>
 
 @{
