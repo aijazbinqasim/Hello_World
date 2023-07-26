@@ -2,38 +2,43 @@
     ViewBag.Title = "Contact";
 }
 
-    <div>
-        <h4>Contact</h4>
-        <hr />
+<div>
+    <h4>Contact</h4>
+    <hr />
 
-        <form action="/Home/ContactUs" method="post">
-            
+    <form action="/Home/ContactUs" method="post">
+        <div class="row">
             <div class="col-md-3">
-            <label for="name" class="form-label-c">Name:</label>
-            <input type="text" name="name" id="name" value="" class="form-control" /><br />
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" id="name" value="" class="form-control" placeholder="Add name" />
+                </div>
 
-            <label for="email" class="form-label-c">Email:</label>
-            <input type="email" name="email" id="email" value="" class="form-control" /><br />
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" name="email" id="email" value="" class="form-control" placeholder="Add email address" />
+                </div>
+
+                <div class="mb-3 d-grid">
+                    <button type="submit" class="btn btn-outline-primary">Submit</button>
+                </div>
+            </div>
         </div>
-        <div class="btn-outline-success">
-            <button >Submit</button>
-          </div>
-           
-        </form>
+    </form>
 
 
-        @if (!string.IsNullOrEmpty(ViewBag.Name) && !string.IsNullOrEmpty(ViewBag.Email))
-        {
-            <pre>
-                      Name: @ViewBag.Name
-                      Email: @ViewBag.Email
-                </pre>
-        }
-        else
-        {
-            <pre>
-                    Values are not set yet!
-                </pre>
-        }
-    </div>
+    @if (!string.IsNullOrEmpty(ViewBag.Name) && !string.IsNullOrEmpty(ViewBag.Email))
+    {
+        <pre>
+                              Name: @ViewBag.Name
+                              Email: @ViewBag.Email
+                        </pre>
+    }
+    else
+    {
+        <pre>
+                            Values are not set yet!
+                        </pre>
+    }
+</div>
 
