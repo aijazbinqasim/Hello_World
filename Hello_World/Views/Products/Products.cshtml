@@ -1,12 +1,9 @@
 ﻿@model IEnumerable<Hello_World.Models.Product>
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-</head>
-<body>
+@{
+    ViewBag.Title = "Products";
+}
+
 
     <div>
         <h4>Product</h4>
@@ -49,5 +46,4 @@
             </tbody>
         </table>
     </div>
-</body>
-</html>
+

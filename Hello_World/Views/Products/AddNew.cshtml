@@ -3,7 +3,7 @@
     ViewBag.Title = "Add New";
 }
 
-<div>
+<div class=" col-md-3 ">
     <h4>Add New Product</h4>
     <hr />
 
@@ -11,34 +11,32 @@
     
         <div id="error-summary" asp-validation-summary="All"></div>
 
-        <label asp-for="Id"></label>
-        <input asp-for="Id" />
-        <span asp-validation-for="Id"></span>
+        <label asp-for="Id" class="form-label-"></label>
+        <input asp-for="Id" class="form-control" />
+        <span asp-validation-for="Id"></span><br />
 
-        <div class="mb-3">
-          <label asp-for="Title" class="form-label"></label>
-          <input asp-for="Title" placeholder="Add Title" class="form-control" />
-          <span asp-validation-for="Title"></span>
-        </div>
+        <label asp-for="Title" class="form-label-c"></label>
+        <input asp-for="Title" placeholder="Add Title" class="form-control" />
+        <span asp-validation-for="Title"></span><br />
+        
+        <label asp-for="Email" class="form-label-c"></label>
+        <input asp-for="Email" placeholder="Add Email" class="form-control" />
+        <span asp-validation-for="Email"></span><br />
 
-        <label asp-for="Email"></label>
-        <input asp-for="Email" placeholder="Add Email" />
-        <span asp-validation-for="Email"></span>
+        <label asp-for="Website" class="form-label-c"></label>
+        <input asp-for="Website" placeholder="Add Website" class="form-control" />
+        <span asp-validation-for="Website"></span><br />
 
-        <label asp-for="Website"></label>
-        <input asp-for="Website" placeholder="Add Website" />
-        <span asp-validation-for="Website"></span>
+        <label asp-for="Price" class="form-label-c"></label>
+        <input min="0" max="500" asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price"></span><br />
 
-        <label asp-for="Price"></label>
-        <input min="0" max="500" asp-for="Price" />
-        <span asp-validation-for="Price"></span>
+        <label asp-for="Description" ></label>
+        <textarea asp-for="Description" rows="4" cols="20" class="form-control"></textarea>
+        <span asp-validation-for="Description"></span><br />
 
-        <label asp-for="Description"></label>
-        <textarea asp-for="Description" rows="4" cols="20"></textarea>
-        <span asp-validation-for="Description"></span>
-
-        <button type="submit">Save</button>
-            
+        <button class="btn btn-outline-success me-2" type="submit">Save</button>
+           
     </form>
 </div>
 

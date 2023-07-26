@@ -2,16 +2,9 @@
     var product = ViewData["Product"] as Product;
 }*@
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    @*<title>@ViewData["Title"]</title>*@
-    <title>@ViewBag.Title</title>
-</head>
-<body>
-
+@{
+    ViewBag.Title = "Detail";
+}
     <div>
         <h4>Product</h4>
         <hr />
@@ -78,5 +71,4 @@
     <div>
         <a asp-controller="Products" asp-action="Products">back to product list</a>
     </div>
-</body>
-</html>
+

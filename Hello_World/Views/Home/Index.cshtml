@@ -1,9 +1,6 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>Index</title>
-</head>
-<body>
+﻿@{
+    ViewBag.Title = "Index";
+}
 
     <h2>@(_config.GetValue<bool>("Person:IsUserAccount"))</h2>
     <h2>@(_config.GetValue<string>("Person:Bio:Name"))</h2>
@@ -58,5 +55,3 @@
 
     <h1>This is a Index page</h1>*@
 
-</body>
-</html>
