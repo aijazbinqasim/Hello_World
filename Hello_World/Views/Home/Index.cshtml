@@ -3,7 +3,7 @@
 }
 
 
-    <img src="~/images/bird.jpg" alt="" width="300" height="300" asp-append-version="true" />
+    <img class="img-thumbnail" src="~/images/bird.jpg" alt="" width="300" height="300" asp-append-version="true" />
 
     <h2>@(_config.GetValue<bool>("Person:IsUserAccount"))</h2>
     <h2>@(_config.GetValue<string>("Person:Bio:Name"))</h2>
