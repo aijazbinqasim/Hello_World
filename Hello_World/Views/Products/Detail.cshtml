@@ -1,74 +1,76 @@
-﻿@*@{
+﻿@model Hello_World.Models.Product
+
+@*@{
     var product = ViewData["Product"] as Product;
 }*@
 
 @{
     ViewBag.Title = "Detail";
 }
-    <div>
-        <h4>Product</h4>
-        <hr />
+<div>
+    <h4>Product</h4>
+    <hr />
 
-        <table border="1" width="85%">
-            <thead>
-                <tr>
-                    <th>
-                        ID
-                    </th>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
 
-                    <th>
-                        Title
-                    </th>
+                <th>
+                    Title
+                </th>
 
-                    <th>
-                        Email
-                    </th>
+                <th>
+                    Email
+                </th>
 
-                    <th>
-                        Website
-                    </th>
+                <th>
+                    Website
+                </th>
 
-                    <th>
-                        Price
-                    </th>
+                <th>
+                    Price
+                </th>
 
-                    <th>
-                        Description
-                    </th>
-                </tr>
-            </thead>
+                <th>
+                    Description
+                </th>
+            </tr>
+        </thead>
 
-            <tbody>
-                <tr>
-                    <td>
-                        @Model.Id
-                    </td>
+        <tbody class="table-group-divider">
+            <tr>
+                <td>
+                    @Model.Id
+                </td>
 
-                    <td>
-                        @Model.Title
-                    </td>
+                <td>
+                    @Model.Title
+                </td>
 
-                    <td>
-                        @Model.Email
-                    </td>
+                <td>
+                    @Model.Email
+                </td>
 
-                    <td>
-                        @Model.Website
-                    </td>
+                <td>
+                    @Model.Website
+                </td>
 
-                    <td>
-                        @Model.Price
-                    </td>
+                <td>
+                    @Model.Price
+                </td>
 
-                    <td>
-                        @Model.Description
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                <td>
+                    @Model.Description
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-    <div>
-        <a asp-controller="Products" asp-action="Products">back to product list</a>
-    </div>
+<div>
+    <a asp-controller="Products" asp-action="Products">back to product list</a>
+</div>
 
