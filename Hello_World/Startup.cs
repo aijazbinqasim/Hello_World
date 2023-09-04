@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Hello_World.Db;
+using Microsoft.AspNetCore.Http;
 
 namespace Hello_World
 {
@@ -14,6 +15,8 @@ namespace Hello_World
         {
             services.AddMvc();
             services.AddSingleton<IProductDb, ProductDb>();
+            services.AddSession();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -26,6 +29,7 @@ namespace Hello_World
 
             app.UseStaticFiles();
             app.UseRouting();
+            app.UseSession();
             
             //app.UseEndpoints(endpoints =>
             //{

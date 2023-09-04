@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Hello_World.Controllers
 {
@@ -6,6 +7,9 @@ namespace Hello_World.Controllers
     {
         public IActionResult Index()
         {
+            HttpContext.Session.SetString("_UserName", "Aijaz Ali Abro Session");
+            HttpContext.Session.SetInt32("_Age", 30);
+
             return View();
         }
 

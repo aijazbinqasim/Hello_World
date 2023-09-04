@@ -4,8 +4,10 @@
     ViewBag.Title = "Products";
 }
 
-
 <div>
+    <h1>@HttpContextAccessor.HttpContext.Session.GetString("_UserName")</h1>
+    <h1>@HttpContextAccessor.HttpContext.Session.GetInt32("_Age")</h1>
+
     <h4>Product</h4>
     <hr />
 
