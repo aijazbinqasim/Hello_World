@@ -15,7 +15,12 @@ namespace Hello_World
         {
             services.AddMvc();
             services.AddSingleton<IProductDb, ProductDb>();
-            services.AddSession();
+
+            services.AddSession(options =>
+            {
+                options.Cookie.Name = "_MysessionCookie";
+            });
+
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
@@ -30,7 +35,7 @@ namespace Hello_World
             app.UseStaticFiles();
             app.UseRouting();
             app.UseSession();
-            
+
             //app.UseEndpoints(endpoints =>
             //{
             //    endpoints.MapDefaultControllerRoute();
@@ -40,7 +45,7 @@ namespace Hello_World
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=App}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
             //app.UseEndpoints(endpoints =>
