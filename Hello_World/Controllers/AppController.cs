@@ -13,6 +13,15 @@ namespace Hello_World.Controllers
             return View();
         }
 
+
+        public ViewResult ClearSession()
+        {
+           // HttpContext.Session.Remove("_Age");
+
+            HttpContext.Session.Clear();
+            return View();
+        }
+
         public IActionResult About()
         {
             return View();
