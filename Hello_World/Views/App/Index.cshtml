@@ -1,4 +1,6 @@
-﻿
+﻿@using Hello_World.Extensions;
+@using Hello_World.Models;
+
 @{
     //Layout = "~/Views/App/_Layout.cshtml";
     //Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,3 +12,16 @@
 
 <h1>@HttpContextAccessor.HttpContext.Session.GetString("_UserName")</h1>
 <h1>@HttpContextAccessor.HttpContext.Session.GetInt32("_Age")</h1>
+
+<h1>@(HttpContextAccessor.HttpContext.Session.Get<bool>("_bool"))</h1>
+<hr/>
+
+<h1>Person Object</h1>
+
+@{
+    var person = HttpContextAccessor.HttpContext.Session.Get<Person>("_Person");
+
+    <h2>@person.Name</h2>
+    <h2>@person.Age</h2>
+    <h2>@person.Amount</h2>
+}
