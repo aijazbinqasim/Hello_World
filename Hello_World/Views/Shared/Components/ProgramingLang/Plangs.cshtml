@@ -1,0 +1,22 @@
+﻿@model Hello_World.Models.PLang
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Programming Languages
+            </button>
+        </h2>
+
+        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <ol type="1">
+                    @foreach (var plang in Model.Names)
+                    {
+                        <li>@plang</li>
+                    }
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

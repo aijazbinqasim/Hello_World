@@ -19,11 +19,13 @@
     @{
         var person = HttpContextAccessor.HttpContext.Session.Get<Person>("_Person");
 
-        <h2>@person.Name</h2>
-        <h2>@person.Age</h2>
-        <h2>@person.Amount</h2>
+        if (person != null)
+        {
+            <h2>@person.Name</h2>
+            <h2>@person.Age</h2>
+            <h2>@person.Amount</h2>
+        }
     }
-
 
     <table class="table table-hover table-bordered">
         <thead>
@@ -61,5 +63,7 @@
             }
         </tbody>
     </table>
+
+    @await Component.InvokeAsync("ProgramingLang")
 </div>
 

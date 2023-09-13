@@ -30,15 +30,19 @@
     @if (!string.IsNullOrEmpty(ViewBag.Name) && !string.IsNullOrEmpty(ViewBag.Email))
     {
         <pre>
-                              Name: @ViewBag.Name
-                              Email: @ViewBag.Email
-                        </pre>
+                                  Name: @ViewBag.Name
+                                  Email: @ViewBag.Email
+                            </pre>
     }
     else
     {
         <pre>
-                            Values are not set yet!
-                        </pre>
+                                Values are not set yet!
+                            </pre>
     }
+
+
+    @await Component.InvokeAsync("ProgramingLang")
+
 </div>
 
